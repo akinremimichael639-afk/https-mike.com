@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
 import clsx from 'clsx';
-import { BookOpen, CalendarIcon, Clock, Plus, Pencil, Trash2, X, Check, Upload, FileText } from 'lucide-react';
+import { Plus, Pencil, Trash2, X, Check, Upload, FileText } from 'lucide-react';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface Course { id: number; code: string; title: string; level: string; type: string; }
