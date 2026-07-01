@@ -2,7 +2,7 @@ services:
   - type: web
     name: lasu-tag-system
     env: node
-    buildCommand: npm install --include=dev && npm rebuild bcrypt --build=from-source && npm run build
+    buildCommand: rm -rf node_modules server/node_modules package-lock.json && npm install --include=dev && npm run build
     startCommand: npm start
     envVars:
       - key: NODE_ENV
