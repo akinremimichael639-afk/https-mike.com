@@ -1,9 +1,13 @@
 import app from './app';
 import { config } from './config/env';
 import pool from './config/db';
+import { initializeDatabase } from './db-init';
 
 const startServer = async () => {
   try {
+    // Initialize database schema and seed
+    await initializeDatabase();
+    
     // Test DB Connection
     const client = await pool.connect();
     client.release();
