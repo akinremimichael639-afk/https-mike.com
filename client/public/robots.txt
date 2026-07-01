@@ -1,0 +1,41 @@
+# robots.txt for AgroLink - Agricultural Supply Chain Platform
+
+# Allow all crawlers to index the site
+User-agent: *
+Allow: /
+
+# Disallow admin and private pages from search engines
+User-agent: *
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /profile/
+Disallow: /orders/
+Disallow: /wishlist/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /notifications/
+Disallow: /support/
+Disallow: /api/
+Disallow: /login/
+Disallow: /register/
+Disallow: /reset-password/
+Disallow: /forgot-password/
+
+# Allow important public pages
+Allow: /marketplace
+Allow: /prices
+Allow: /farmers
+Allow: /about
+Allow: /contact
+Allow: /terms
+Allow: /privacy
+Allow: /faq
+
+# Specify sitemap location
+Sitemap: https://agrolink.com/sitemap.xml
+
+# Crawl delay to prevent server overload
+Crawl-delay: 1
+
+# Specify host
+Host: https://agrolink.com
