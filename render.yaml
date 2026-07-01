@@ -4,6 +4,8 @@ services:
     env: node
     buildCommand: npm install --include=dev && npm run build
     startCommand: npm start
+      preDeployCommand: sh wait-for-db.sh
+      healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
         value: production

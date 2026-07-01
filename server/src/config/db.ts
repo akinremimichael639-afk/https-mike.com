@@ -22,6 +22,9 @@ const pool = new Pool({
 
 pool.on('error', (err) => {
   console.error('Unexpected error on idle client', err);
+pool.on('connect', () => {
+  console.log('✅ New client connected to pool');
+});
 });
 
 export default pool;
