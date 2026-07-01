@@ -2,11 +2,13 @@
   "name": "server",
   "version": "1.0.0",
   "description": "TAG Backend",
-  "main": "dist/server.js",
+  "main": "server/dist/server.js",
   "scripts": {
-    "start": "node dist/server.js",
-    "dev": "nodemon src/server.ts",
-    "build": "tsc"
+    "start": "node server/dist/server.js",
+    "dev": "nodemon server/src/server.ts",
+    "build:client": "cd client && npm install && npm run build",
+    "build:server": "tsc -p server/tsconfig.json",
+    "build": "npm run build:client && npm run build:server"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",

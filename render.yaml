@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: lasu-tag-system
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DB_HOST
+        fromDatabase:
+          name: lasu-tag-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: lasu-tag-db
+          property: port
+      - key: DB_USER
+        fromDatabase:
+          name: lasu-tag-db
+          property: user
+      - key: DB_PASS
+        fromDatabase:
+          name: lasu-tag-db
+          property: password
+      - key: DB_NAME
+        fromDatabase:
+          name: lasu-tag-db
+          property: database
+
+databases:
+  - name: lasu-tag-db
+    databaseName: lasu_tag_db
+    user: lasu_admin
