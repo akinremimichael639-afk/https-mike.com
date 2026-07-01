@@ -34,3 +34,4 @@ databases:
   - name: lasu-tag-db
     databaseName: lasu_tag_db
     user: lasu_admin
+    ipAllowList: []
